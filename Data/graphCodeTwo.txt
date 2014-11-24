@@ -1,0 +1,9 @@
+plot(data$age, data$cholesterol, col=data$state) 
+age<-seq(10,90,by=1)
+state<-c('Iowa','Nebraska');
+for(i in 1:length(state))
+{
+    z<-data.frame(age=as.numeric(age),state=as.factor(state[i]))
+    lines(z$age,predict(model.a,newdata=z),col=i)
+}
+legend('topleft',legend=c('Iowa','Nebraska','Iowa model','Nebraska model'), pch=c(1,1,NA,NA), lty=c(NA,NA,1,1), col=c(1, 2, 1, 2))

@@ -1,0 +1,4 @@
+plot(ferns$Size, ferns$Number) 
+newSize <- data.frame(Size=seq(1,7,by=0.01))
+predFerns <- predict(fern.lm,newdata=newSize)
+lines(newSize$Size, predFerns, col="red")
